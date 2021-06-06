@@ -43,6 +43,6 @@ object DateTimeUtil {
             calendar.timeInMillis = milliSeconds * 1000
         }
         val hour = calendar.get(Calendar.HOUR_OF_DAY)
-        return hour in 6..19
+        return hour in 6..18
     }
 }
