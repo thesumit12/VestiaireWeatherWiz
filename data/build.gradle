@@ -1,0 +1,26 @@
+apply from: "../gradle/submodule.gradle"
+
+def appConfigPropertiesFile = rootProject.file("app.properties")
+def appProperties = new Properties()
+appProperties.load(new FileInputStream(appConfigPropertiesFile))
+
+android {
+    buildTypes {
+        debug {
+            testCoverageEnabled true
+            buildConfigField("String", "BASE_URL", appProperties['urlUat'])
+            buildConfigField("String", "API_KEY", appProperties['apiKeyUat'])
+        }
+        release {
+            testCoverageEnabled false
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            buildConfigField("String", "BASE_URL", appProperties['urlUat'])
+            buildConfigField("String", "API_KEY", appProperties['apiKeyUat'])
+        }
+    }
+}
+dependencies {
+    implementation project(':domain')
+    implementation project(':common')
+}

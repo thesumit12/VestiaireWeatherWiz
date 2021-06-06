@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <import type="com.slakra.common.ProgressState"/>
+        <import type="android.view.View"/>
+        <variable
+            name="currentWeather"
+            type="com.slakra.domain.entity.CurrentWeatherEntity" />
+        <variable
+            name="state"
+            type="ProgressState" />
+        <variable
+            name="errorMsg"
+            type="String" />
+    </data>
+
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:id="@+id/parentLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/day_sky"
+        tools:context=".MainActivity">
+
+        <include android:id="@+id/contentMain"
+            layout="@layout/layout_content_main"
+            app:state="@{state}"
+            app:currentWeather="@{currentWeather}"/>
+
+        <include layout="@layout/layout_bottom_sheet"
+            android:visibility="@{state == ProgressState.SUCCESS ? View.VISIBLE : View.GONE, default = gone}"
+            app:currentWeather="@{currentWeather}"/>
+
+        <include android:id="@+id/contentError"
+            layout="@layout/layout_error"
+            android:visibility="@{state == ProgressState.ERROR ? View.VISIBLE : View.GONE, default = gone}"
+            app:errorMsg="@{errorMsg}"/>
+
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+</layout>

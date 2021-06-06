@@ -1,0 +1,19 @@
+apply from: "../gradle/submodule.gradle"
+
+android {
+    buildFeatures {
+        dataBinding = true
+    }
+}
+
+
+dependencies {
+
+    // Android support libraries
+    sharedSupportLibraries dependencies
+
+    implementation "androidx.lifecycle:lifecycle-extensions:$rootProject.lifecycleExtensionVersion"
+    implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:$rootProject.lifecycleExtensionVersion"
+
+
+}

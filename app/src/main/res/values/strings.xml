@@ -1,0 +1,27 @@
+<resources>
+    <string name="app_name">VestiaireWeatherWiz</string>
+    <string name="paris_france">Paris,France</string>
+    <string name="pressure">Pressure</string>
+    <string name="wind">Wind</string>
+    <string name="sunrise">Sunrise</string>
+    <string name="sunset">Sunset</string>
+    <string name="hpa">hpa</string>
+    <string name="humidity">Humidity</string>
+    <string name="percent">\u0025</string>
+    <string name="temperature">%s\&#xb0;C</string>
+    <string name="feels_like">| feels like %s&#xb0;</string>
+    <string name="uv_index">UV Index</string>
+    <string name="wind_speed">%s m/sec</string>
+    <string name="today">Today</string>
+    <string name="see_all">See All</string>
+    <string name="visibility">Visibility</string>
+    <string name="visible">%s m</string>
+    <string name="dew_point">Dew Point</string>
+    <string name="now">Now</string>
+    <string name="next_7_days">Next 7 days</string>
+    <string name="hot">Hot Weather</string>
+    <string name="cold">Cold Weather</string>
+    <string name="unknown_error">Something went wrong!! Please check your internet connection</string>
+    <string name="try_again">Try Again</string>
+    <string name="show_cache_data">Show Cache data</string>
+</resources>

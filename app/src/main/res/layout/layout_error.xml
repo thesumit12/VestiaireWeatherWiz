@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <import type="android.text.TextUtils"/>
+        <variable
+            name="errorMsg"
+            type="String" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:id="@+id/ivNoResult"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_error"
+            android:layout_marginTop="@dimen/margin_54"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tvError"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@{TextUtils.isEmpty(errorMsg) ? @string/unknown_error : errorMsg}"
+            android:textSize="16sp"
+            android:textColor="@color/text_white"
+            android:gravity="center_horizontal"
+            android:textStyle="bold"
+            android:layout_marginTop="@dimen/margin_20"
+            app:layout_constraintStart_toStartOf="@id/ivNoResult"
+            app:layout_constraintEnd_toEndOf="@id/ivNoResult"
+            app:layout_constraintTop_toBottomOf="@id/ivNoResult" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnTryAgain"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/try_again"
+            android:layout_marginTop="@dimen/margin_32"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvError"/>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnCache"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/show_cache_data"
+            android:layout_marginTop="@dimen/margin_32"
+            android:visibility="gone"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/btnTryAgain"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
