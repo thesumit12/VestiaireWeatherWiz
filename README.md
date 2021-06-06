@@ -32,5 +32,9 @@
   * Swipe to refresh
   * Local DB cache refresh based on business requirement
   * UI test cases
+  
+ ## App Screenshots
+ <img src="screenshots/home_day.png" height="400" alt="Screenshot"/>  <img src="screenshots/home_night.png" height="400" alt="Screenshot"/>  <img src="screenshots/7_days.png" height="400" alt="Screenshot"/>  <img src="screenshots/error.png" height="400" alt="Screenshot"/>
+
 
 
